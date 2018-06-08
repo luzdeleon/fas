@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "/app/styles/global";
+@import "/app/styles/variables";
+
+@import "/app/app.component";
+@import "/app/header/header.component";
+@import "/app/orange/orange.component";
+@import "/app/total-yield/total-yield.component";
