@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-orange-type',
+  templateUrl: './orange-type.component.html',
+  styleUrls: ['./orange-type.component.scss']
+})
+export class OrangeTypeComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
