@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="19px" viewBox="0 0 40 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>SM1 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="10" y="3" width="38" height="17" rx="8.5"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-1090.000000, -770.000000)">
+            <g id="Placeholder" transform="translate(1081.000000, 768.000000)">
+                <g id="SM1-3">
+                    <g id="Rectangle-2">
+                        <rect stroke="#F5F7FA" stroke-width="3" stroke-linejoin="square" fill="#890078" fill-rule="evenodd" x="11.5" y="4.5" width="35" height="14" rx="7"></rect>
+                        <use stroke="#890078" stroke-width="1" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="S-H-O-P" font-family="Roboto-Black, Roboto" font-size="6" font-weight="700" letter-spacing="0.180000007" fill="#FFFFFF">
+                        <tspan x="16.8128711" y="6">S-H-O-P</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
