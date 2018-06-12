@@ -1,33 +1,80 @@
-<div class="orange">
+<div class="orange-type">
     <h1 class="header">estimated yield by orange size</h1>
-    <div class="row">
-  
-      <div class="col-lg-2 col-xs-12 weight">
-        <h2>orange weight</h2>
-        <i class="orange"></i>
-        <span>200g</span>
-      </div>
-  
-      <div class="col-lg-3 col-xs-12 offering">
-        <h2>you can offer</h2>
-        <p>336 T</p>
-        <span>
-          you can sell to
-        </span>
-        <div>
-          <img src="" alt="">
+    <div class="container-fluid">
+        <div class="type">
+          <div class="row">
+              
+              <div class="col-lg-2 col-xs-12 weight">
+                  <h2>orange weight</h2>
+                  <div class="tbContainer">
+                      <i class="orange"></i>
+                      <span>200g</span>
+                  </div>
+                </div>
+            
+                <div class="col-lg-3 col-xs-12 offering">
+                  <h2>you can offer</h2>
+                  <span class="offering-amount-txt">336 T</span>
+                  <span class="normal-txt">
+                    You can sell to
+                  </span>
+                  <div class="offering-mkt">
+                      <img src="../assets/img/SM1 3 Copy.svg" alt="">
+                      <img src="../assets/img/SM1 Copy.svg" alt="">
+                      <img src="../assets/img/SM1.svg" alt="">
+                  </div>
+                </div>
+            
+                <div class="col-lg-4 col-xs-12 sales">
+                  <h2>potential sales</h2>
+                  <span class="prediction">$2, 923, 200 USD</span>
+                  <span class="cost"> at $1.45 USD / 250 orange</span>
+                </div>
+            
+                <div class="col-lg-3 col-xs-12 percentage">
+                  <h2>% yield</h2>
+                  
+                </div>
+          </div>
         </div>
-      </div>
-  
-      <div class="col-lg-5 col-xs-12 sales">
-        <h2>potential sales</h2>
-        <h2>$2, 923, 200 USD</h2>
-        <span> at $1.45 USD / 250 orange</span>
-      </div>
-  
-      <div class="col-lg-2 col-xs-12 percentage">
-        <h2>% yield</h2>
-      </div>
+
+        <div class="type">
+            <div class="row">
+                
+                <div class="col-lg-2 col-xs-12 weight">
+                    <h2>orange weight</h2>
+                    <div class="tbContainer">
+                        <i class="orange"></i>
+                        <span>250g</span>
+                    </div>
+                  </div>
+              
+                  <div class="col-lg-3 col-xs-12 offering">
+                    <h2>you can offer</h2>
+                    <span class="offering-amount-txt">336 T</span>
+                    <span class="normal-txt">
+                      You can sell to
+                    </span>
+                    <div class="offering-market">
+                      <img src="../assets/img/SM1 3 Copy.svg" alt="">
+                      <img src="../assets/img/SM1 Copy.svg" alt="">
+                      <img src="../assets/img/SM1.svg" alt="">
+                    </div>
+                  </div>
+              
+                  <div class="col-lg-4 col-xs-12 sales">
+                    <h2>potential sales</h2>
+                    <span class="prediction">$2, 923, 200 USD</span>
+                    <span class="cost"> at $1.45 USD / 250 orange</span>
+                  </div>
+              
+                  <div class="col-lg-3 col-xs-12 percentage">
+                    <h2>% yield</h2>
+                    <div [chart]="pie"></div>
+                  </div>
+            </div>
+          </div>
+          <!--end of temporary code-->
     </div>
   </div>
   

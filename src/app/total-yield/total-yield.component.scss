@@ -2,6 +2,35 @@
 
 .total-yield {
     padding: 27px 0 30px;
+    h1 + .container-fluid{
+        padding-top: 40px;
+    }
     @media screen and (min-device-width: $bp-xxlarge) {}
 }
 
+h2 {
+    font-size: 12px;
+    font-weight: 900;
+    color: $gray;
+    @media screen and (min-device-width: $bp-xlarge){
+        font-size: 0.65em;
+    }
+}
+
+.tags {
+    margin: 10px 0 25px;
+}
+span {
+    font-size: 20px;
+    font-weight: 900;
+    color: $dark-gray;
+    @media screen and (min-device-width: $bp-xlarge){
+        font-size: 1.4em;
+    }
+    &.weather-txt{
+        font-size: 12px;
+        @media screen and (min-device-width: $bp-xlarge){
+            font-size: 1em;
+        }
+    }
+}

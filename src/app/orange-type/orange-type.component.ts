@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Chart} from "angular-highcharts";
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-orange-type',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrangeTypeComponent implements OnInit {
 
-  constructor() { }
+  weatherObservable: Observable<any[]>;
 
-  ngOnInit() {
+  constructor(public af: AngularFireDatabase) {
+    let weathers = this.af.list('/weather');
+    
   }
 
+  ngOnInit() {
+    this.weatherObservable = this.getCourses('/weather');
+  }
+
+  getCourses(listPath): Observable<any[]> {
+    return this.af.list(listPath).valueChanges();
+  }
 }

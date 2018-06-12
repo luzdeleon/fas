@@ -1,18 +1,20 @@
 <div class="total-yield col-lg-12">
   <h1 class="header">total estimated yield</h1>
-<div class="row">
-    <div class="col-lg-4">
-        <div class="tags">
-          <p>total orchid area</p>
-          <p>30 ha2 </p>
-        </div>
-        <div class="tags">
-            <p>total yield</p>
-            <p>340T</p>
-          </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="tags">
+                <h2>total orchid area</h2>
+                <span>30 ha2 </span>
+              </div>
+              <div class="tags">
+                  <h2>total yield</h2>
+                  <span>340T</span>
+                </div>
+            </div>
+            <div class="graph col-lg-8">
+              <div [chart]="graph"></div>
+            </div>
       </div>
-      <div class="graph col-lg-8">
-        <span>highcharts graph goes here</span>
-      </div>
-</div>
+  </div>
 </div>
