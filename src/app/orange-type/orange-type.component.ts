@@ -16,5 +16,27 @@ export class OrangeTypeComponent implements OnInit {
   ngOnInit() {
   }
 
+  pie = new Chart({
+    /*chart : {
+      type: 'pie'
+    },
+    title: {
+      text: ''
+    },
+    plotOptions: {
+      pie: {
+        shadow: false,
+        center: ['50%', '50%']
+    }
+  },
+  series : [
+    {
+      name: '% of estimated avg. field',
+      data: ['test', 80],
+      size: '80%',
+      innerSize: '60%'
+      }
+  ]*/
+  });
 
 }
