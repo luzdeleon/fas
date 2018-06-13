@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Chart} from "angular-highcharts";
+import {ServerService} from '../server.service';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-total-yield',
@@ -7,9 +10,95 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TotalYieldComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serverService: ServerService) { }
+
+  totalYield: number = 0;
+  totalOrchidArea: number = 0;
 
   ngOnInit() {
+    this.getYieldInfo();
   }
+
+  getYieldInfo(){
+    this.serverService.getInformation()
+      .subscribe((response: Response) => {const data = response.json();
+
+        this.totalYield = data["Total"].Big + data["Total"].Small;
+
+        console.log(this.totalYield);
+    },
+    (error) => console.log(error));
+
+
+  }
+
+  graph = new Chart({
+    chart: {
+      type: 'line'
+    },
+    title: {
+      text: ''
+    },
+    credits: {
+      enabled: false
+    },
+    xAxis: {
+      className: 'highcharts-xAxis-custom',
+      title: {
+        text: 'ZONE',
+        style: {
+          color: '#262F34'
+        }
+      },
+      max: 18,
+      endOnTick: true
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      itemMarginTop: 40
+  },
+    yAxis: {
+      className: 'highcharts-yAxis-custom',
+      title: {
+          text: 'YIELD',
+          style: {
+            color: '#262F34'
+          }
+      },
+      gridLineColor: '#D6D6D6'
+  },
+  plotOptions: {
+    series: {
+      pointStart: 0,
+      pointInterval: 3,
+      lineWidth: 2,
+      marker: {
+        enabled: false
+      }
+    }
+},
+    series: [
+      {
+        name: 'Estimated yield per hectare',
+        data: [24, 31, 15, 20, 25, 30, 35],
+        color: '#20C687'
+        
+      },
+
+      {
+        name: 'Min. Expected Avg. Yield',
+        data: [25, 25, 25, 25, 25, 25, 25],
+        dashStyle: 'dash',
+        color: '#7A7A7A'
+      },
+      {
+        name: 'Estimated Avg. Yield',
+        data: [28, 28, 28, 28, 28, 28, 28],
+        color: '#F0B33F'
+      }
+    ]
+  });
 
 }

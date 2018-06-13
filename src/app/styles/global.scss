@@ -59,3 +59,37 @@ i {
         }
     }
 }
+
+/*----highcharts styling------*/
+//line
+.chart-legend {
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: 300;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+.highcharts-yAxis-custom, .highcharts-xAxis-custom {
+    > path {
+            stroke-width: 1px;
+            stroke: $lighter-gray;
+            &.highcharts-axis-line {
+                stroke: none;
+            }  
+    }
+    text {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2em;
+        font-weight: 900;
+    }
+}
+.highcharts-legend-item {
+    text {
+        font-weight: 300;
+    }
+}
+//pie
+.labelYieldChart {
+    
+}

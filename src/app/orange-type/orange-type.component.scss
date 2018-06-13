@@ -1,5 +1,16 @@
 @import "../../app/styles/variables";
 
+.orange-type {
+    h1 + .container-fluid {
+        margin: 35px 0;
+    }
+    .type {
+        margin: 4.3em 0;
+        @media screen and (min-device-width: $bp-xlarge){
+            margin: 3.8em 0;
+        }
+    }
+}
 h2 {
     font-size: 12px;
     font-weight: 900;
@@ -9,10 +20,61 @@ h2 {
     }
 }
 
+.tbContainer {
+    display: flex;
+}
+
+span {
+    font-weight: 900;
+    color: $dark-gray;
+    @media screen and (min-device-width: $bp-xlarge){
+        font-size: 1.4em;
+    }
+}
+
 .weight {
     span {
         display: inline-block;
         font-size: 20px;
         font-weight: 900;
+        line-height: 1.8em;
+        @media screen and (min-device-width: $bp-xlarge){
+            font-size: 1.4em;
+        }
+    }
+}
+
+.offering {
+    .offering-mkt {
+        margin: 1em 0;
+    }
+    img {
+        margin-right: 0.9em;
+        margin-bottom: 0.4em;
+    }
+    span {
+        font-size: 40px;
+        display: block;
+        &.normal-txt {
+            font-weight: 400;
+            font-size: 13px;
+        }
+    }
+}
+
+.sales {
+    span {
+        display: block;
+        &.prediction {
+            font-size: 30px;
+        }
+        &.cost {
+            font-weight: 400;
+            font-size: 13px;
+            margin-top: 0.5em;
+            @media screen and(min-device-width: $bp-xlarge){
+                font-size: 1.2em;
+            }
+        }
     }
 }

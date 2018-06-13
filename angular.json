@@ -25,7 +25,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/libs/bootstrap/bootstrap.min.js"
+              "src/assets/libs/bootstrap/bootstrap.min.js",
+              "src/assets/libs/firebase/firebase.js"
             ]
           },
           "configurations": {
