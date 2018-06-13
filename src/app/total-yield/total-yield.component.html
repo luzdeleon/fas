@@ -2,19 +2,19 @@
   <h1 class="header">total estimated yield</h1>
   <div class="container-fluid">
       <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
               <div class="tags">
                 <h2>total orchid area</h2>
                 <span>30 ha2 </span>
               </div>
               <div class="tags">
                   <h2>total yield</h2>
-                  <span>340T</span>
+                  <span>{{totalYield}} T</span>
                 </div>
             </div>
-            <div class="graph col-lg-8">
+            <div class="graph col-lg-9">
               <div [chart]="graph"></div>
-              <p class="chart-legend col-md-9 col-xs-12">Each zone represents one hectare</p>
+              <p class="chart-legend col-md-10 col-xs-12">Each zone represents one hectare</p>
             </div>
       </div>
   </div>

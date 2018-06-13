@@ -1,6 +1,7 @@
-import { Component, OnInit, Response } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
 import {ServerService} from '../server.service';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-orange-type',
@@ -9,15 +10,16 @@ import {ServerService} from '../server.service';
 })
 export class OrangeTypeComponent implements OnInit {
 
-  public counter = 0;
+  counter: number  = 0;
 
-  oranges: number;
+  oranges: number = 0;
 
   constructor(private serverService: ServerService) {
     
   }
 
   ngOnInit() {
+    
   }
 
 
@@ -32,7 +34,8 @@ export class OrangeTypeComponent implements OnInit {
 
   smallOrangePieChart = new Chart({
     chart : {
-      type: 'pie'
+      type: 'pie',
+      height: 95 + "%"
     },
     title: {
       text: ''
@@ -42,7 +45,7 @@ export class OrangeTypeComponent implements OnInit {
         shadow: false,
         center: ['50%', '50%'],
         className: "highlight-yield-estimated",
-        colors: ["#979797", "#20C687"],
+        colors: ["#20C687","#979797"],
         dataLabels: {
           enabled: false
         }
@@ -54,11 +57,11 @@ export class OrangeTypeComponent implements OnInit {
       innerSize: '60%',
       size: '100%',
       data: [{
-        name : "% of non-estimated avg. field",
-        y: 60
-      }, {
         name : "% of estimated avg. field",
         y: 40
+      }, {
+        name : "% of non-estimated avg. field",
+        y: 60
       }]
     }
   ]
@@ -67,7 +70,8 @@ export class OrangeTypeComponent implements OnInit {
   
   bigOrangePieChart = new Chart({
     chart : {
-      type: 'pie'
+      type: 'pie',
+      height: 95 + "%"
     },
     title: {
       text: ''
@@ -77,7 +81,7 @@ export class OrangeTypeComponent implements OnInit {
         shadow: false,
         center: ['50%', '50%'],
         className: "highlight-yield-estimated",
-        colors: ["#979797", "#20C687"],
+        colors: ["#20C687","#979797"],
         dataLabels: {
           enabled: false
         }
@@ -89,11 +93,11 @@ export class OrangeTypeComponent implements OnInit {
       innerSize: '60%',
       size: '100%',
       data: [{
-        name : "% of non-estimated avg. field",
-        y: 40
-      }, {
         name : "% of estimated avg. field",
         y: 60
+      }, {
+        name : "% of non-estimated avg. field",
+        y: 40
       }]
     }
   ]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
 import {ServerService} from '../server.service';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-total-yield',
@@ -11,19 +12,25 @@ export class TotalYieldComponent implements OnInit {
 
   constructor(private serverService: ServerService) { }
 
+  totalYield: number = 0;
+  totalOrchidArea: number = 0;
+
   ngOnInit() {
+    this.getYieldInfo();
   }
 
   getYieldInfo(){
     this.serverService.getInformation()
       .subscribe((response: Response) => {const data = response.json();
-     
+
+        this.totalYield = data["Total"].Big + data["Total"].Small;
+
+        console.log(this.totalYield);
     },
     (error) => console.log(error));
 
 
   }
-
 
   graph = new Chart({
     chart: {
@@ -49,7 +56,8 @@ export class TotalYieldComponent implements OnInit {
     legend: {
       layout: 'vertical',
       align: 'right',
-      verticalAlign: 'middle'
+      verticalAlign: 'middle',
+      itemMarginTop: 40
   },
     yAxis: {
       className: 'highcharts-yAxis-custom',

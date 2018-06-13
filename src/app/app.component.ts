@@ -21,7 +21,7 @@ export class AppComponent {
   onGet(){
     this.serverService.getInformation()
       .subscribe((response: Response) => {const data = response.json();
-      console.log(data);},
+     
     (error) => console.log(error));
   }
 

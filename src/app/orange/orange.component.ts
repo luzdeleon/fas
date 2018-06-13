@@ -11,48 +11,51 @@ import {Response} from '@angular/http';
   styleUrls: ['./orange.component.scss']
 })
 
-
-
 export class OrangeComponent implements OnInit {
 
-  public temporaryWeather = [];
+  temporaryWeather: Array<any> = [];
 
-  private randomWeather: Array<any>;
+  randomWeather: Array<any> = [];
 
-  private randomIndex = this.temporaryWeather[Math.random()* this.temporaryWeather.length];
+  randomIndex: number = 0;
+
+  buildIndexString: string = "Date";
+
+  date: string = "";
+  weather: string = "";
+  minTemp: number = 0;
+  maxTemp: number = 0;
+  
 
 
   ngOnInit() {
     this.getWeatherInfo();
-  }
 
+    this.randomIndex = Math.random() * this.temporaryWeather.length;
+    this.buildIndexString = this.buildIndexString + (this.randomIndex + 1);
+    
+    this.getData();
+  }
 
   getWeatherInfo(){
     this.serverService.getInformation()
       .subscribe((response: Response) => {const data = response.json();
+
+        this.temporaryWeather = data["Weather"];
       
-      data["Weather 2"].forEach(element => {
-        this.randomWeather = element.split(",");
-        this.temporaryWeather.push(this.randomWeather);
-       
-      });
+      ;
     },
     (error) => console.log(error));
-
-    console.log(this.temporaryWeather);
     
   }
 
-
+  getData() {
+    
+  }
 
   items: Observable<any[]>;
-  constructor(db: AngularFireDatabase, private serverService: ServerService){
-    
-    /*this.items = db.list('/Information/Weather').valueChanges();
-    //test
-    this.items.forEach(element => {
-       console.log(element);
-    });*/
+  constructor(private serverService: ServerService){
+
 
   }
 
