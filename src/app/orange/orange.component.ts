@@ -33,24 +33,38 @@ export class OrangeComponent implements OnInit {
 
     this.randomIndex = Math.random() * this.temporaryWeather.length;
     this.buildIndexString = this.buildIndexString + (this.randomIndex + 1);
+
+    this.getMinTemp(this.randomIndex);
+    this.getMaxTemp(this.randomIndex)
+
+    this.getDate(this.randomIndex);
+
+    this.getWeather(this.randomIndex);
     
-    this.getData();
   }
 
   getWeatherInfo(){
-    this.serverService.getInformation()
-      .subscribe((response: Response) => {const data = response.json();
-
-        this.temporaryWeather = data["Weather"];
-      
-      ;
-    },
-    (error) => console.log(error));
-    
+    this.serverService.getInformation().subscribe((response: Response)=> {
+      //this.temporaryWeather = response["Weather"];
+      console.log(this.temporaryWeather)
+    });
   }
 
-  getData() {
-    
+  getMinTemp(index){
+    console.log(this.temporaryWeather[index])
+    this.minTemp = this.temporaryWeather[this.randomIndex][2]
+  }
+
+  getMaxTemp(index){
+    this.maxTemp = this.temporaryWeather[index][3]
+  }
+
+  getDate(index){
+    this.date = this.temporaryWeather[index][0]
+  }
+
+  getWeather(index){
+    this.date = this.temporaryWeather[index][1]
   }
 
   items: Observable<any[]>;

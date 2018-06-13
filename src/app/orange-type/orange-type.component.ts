@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
 import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-orange-type',
@@ -14,23 +15,35 @@ export class OrangeTypeComponent implements OnInit {
 
   oranges: number = 0;
 
+  zonesArray: Array<any> = [];
+
+  auxArray: Array<any> = [];
+
   constructor(private serverService: ServerService) {
     
   }
 
   ngOnInit() {
-    
+    this.getOrangeInfo();
   }
 
 
+  getOrangeInfo() {
+    this.serverService.getInformation().subscribe((response: Response)=> {});
+  }
+  
+  /*
   getOrangeInfo(){
     this.serverService.getInformation()
+    .subscribe(zones => this.heroes = this.zonesArray)
       .subscribe((response: Response) => {const data = response.json();
         this.oranges = data.Total;
-        console.log(this.oranges);
+
+        this.auxArray = data["Zones"];
     },
     (error) => console.log(error));
-  }
+  }*/
+
 
   smallOrangePieChart = new Chart({
     chart : {

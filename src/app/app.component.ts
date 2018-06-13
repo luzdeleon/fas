@@ -20,9 +20,8 @@ export class AppComponent {
   
   onGet(){
     this.serverService.getInformation()
-      .subscribe((response: Response) => {const data = response.json();
-     
-    (error) => console.log(error));
+      .subscribe((information: any[]) => {
+      }, (error) => console.log(error));
   }
 
   //constructor(){}

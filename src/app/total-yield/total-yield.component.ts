@@ -20,16 +20,9 @@ export class TotalYieldComponent implements OnInit {
   }
 
   getYieldInfo(){
-    this.serverService.getInformation()
-      .subscribe((response: Response) => {const data = response.json();
-
-        this.totalYield = data["Total"].Big + data["Total"].Small;
-
-        console.log(this.totalYield);
-    },
-    (error) => console.log(error));
-
-
+    this.serverService.getInformation().subscribe((response: Response)=> {
+      this.totalYield = response["Total"].Big + response["Total"].Small;
+    });
   }
 
   graph = new Chart({
