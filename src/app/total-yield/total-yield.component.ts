@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
+import {ServerService} from '../server.service';
 
 @Component({
   selector: 'app-total-yield',
@@ -8,10 +9,21 @@ import {Chart} from "angular-highcharts";
 })
 export class TotalYieldComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit() {
   }
+
+  getYieldInfo(){
+    this.serverService.getInformation()
+      .subscribe((response: Response) => {const data = response.json();
+     
+    },
+    (error) => console.log(error));
+
+
+  }
+
 
   graph = new Chart({
     chart: {
