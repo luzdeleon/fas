@@ -52,19 +52,19 @@ export class OrangeComponent implements OnInit {
 
   getMinTemp(index){
     console.log(this.temporaryWeather[index])
-    this.minTemp = this.temporaryWeather[this.randomIndex][2]
+    //this.minTemp = this.temporaryWeather[this.randomIndex][2]
   }
 
   getMaxTemp(index){
-    this.maxTemp = this.temporaryWeather[index][3]
+    //this.maxTemp = this.temporaryWeather[index][3]
   }
 
   getDate(index){
-    this.date = this.temporaryWeather[index][0]
+    //this.date = this.temporaryWeather[index][0]
   }
 
   getWeather(index){
-    this.date = this.temporaryWeather[index][1]
+   // this.date = this.temporaryWeather[index][1]
   }
 
   items: Observable<any[]>;

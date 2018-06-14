@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import {ServerService} from './server.service';
 import {Response} from '@angular/http';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,9 +19,7 @@ export class AppComponent {
   
   onGet(){
     this.serverService.getInformation()
-      .subscribe((information: any[]) => {
-      }, (error) => console.log(error));
+      /*.subscribe((information: any[]) => {
+      }, (error) => console.log(error));*/
   }
-
-  //constructor(){}
 }

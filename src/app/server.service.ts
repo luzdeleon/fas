@@ -11,11 +11,11 @@ export class ServerService {
     getInformation(){
         const headers = new Headers({"Content-Type": "application/json"});
         return this.http.get("https://faas-dtis.firebaseio.com/Information.json", {headers: headers})
-        .pipe(map(
+        /*.pipe(map(
             (response: Response) => {
                 const data = response.json();
                 return data;
             }
-        ))
+        ))*/
     }
 }

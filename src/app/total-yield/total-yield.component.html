@@ -4,6 +4,9 @@
       <div class="row">
           <div class="col-lg-3">
               <div class="tags">
+                <ul>
+                  <li *ngFor="let item of items | async">{{item}}</li>
+                </ul>
                 <h2>total orchid area</h2>
                 <span>18 ha2 </span>
               </div>
