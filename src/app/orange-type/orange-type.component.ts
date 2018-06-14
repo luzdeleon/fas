@@ -13,10 +13,12 @@ import { Observable } from 'rxjs';
 })
 export class OrangeTypeComponent implements OnInit {
 
-  oranges: number = 0;
+  smallSizeTotal: number = 0;
+  bigSizeTotal: number = 0;
   items: Observable<any[]>;
   cost: number=0;
   aux: Array<any>;
+
 
 
   constructor(db: AngularFireDatabase , private serverService: ServerService) {
@@ -25,6 +27,8 @@ export class OrangeTypeComponent implements OnInit {
 
   ngOnInit() {
     this.getOrangeInfo();
+
+    
   }
 
 
@@ -35,9 +39,20 @@ export class OrangeTypeComponent implements OnInit {
         //console.log(item)
         item.forEach(i => {
           //console.log(i)
-          this.aux = i.split(":")
-          console.log(this.aux)
-          console.log(this.aux[1])
+          this.aux = i.split(": ")
+          //console.log(this.aux)
+          if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
+            this.aux[1] = +this.aux[1];
+            //console.log((this.aux[1]))
+            this.bigSizeTotal = this.bigSizeTotal + this.aux[1]
+            //console.log(this.bigSizeTotal)
+          }else {
+            this.aux[1] = +this.aux[1];
+            console.log((this.aux[1]))
+            this.smallSizeTotal = this.smallSizeTotal + this.aux[1]
+            //console.log(this.smallSizeTotal)
+          }
+          
         })
       })
     })
