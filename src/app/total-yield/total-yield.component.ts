@@ -13,16 +13,14 @@ import { Observable } from 'rxjs';
 export class TotalYieldComponent implements OnInit {
 
   items: Observable<any[]>;
-  totalYield: any;
+  totalYield: any = 0;
   totalOrchidArea: number = 0;
   
   constructor(db: AngularFireDatabase , private serverService: ServerService) {
 
-    //const relative = db.object('items').valueChanges();
+    //const relative = db.object('Information/Total').valueChanges();
 
-    this.items = db.list("Information/Total").valueChanges();
-
-    console.log(this.totalYield)
+    this.items = db.list("Information/Total").valueChanges()
   }
   
 
@@ -31,9 +29,14 @@ export class TotalYieldComponent implements OnInit {
   }
 
   getYieldInfo(){
-    this.serverService.getInformation().subscribe((response: Response)=> {
+    this.items.subscribe((_items)=>{
+      _items.forEach(item => {
+        this.totalYield = this.totalYield + item;
+      })
+    })
+    /*this.serverService.getInformation().subscribe((response: Response)=> {
       //this.totalYield = response["Total"].Big + response["Total"].Small;
-    });
+    });*/
   }
 
   graph = new Chart({

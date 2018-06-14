@@ -3,6 +3,8 @@ import {Chart} from "angular-highcharts";
 import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
 import { element } from 'protractor';
+import {AngularFireDatabase} from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-orange-type',
@@ -11,16 +13,14 @@ import { element } from 'protractor';
 })
 export class OrangeTypeComponent implements OnInit {
 
-  counter: number  = 0;
-
   oranges: number = 0;
+  items: Observable<any[]>;
+  cost: number=0;
+  aux: Array<any>;
 
-  zonesArray: Array<any> = [];
 
-  auxArray: Array<any> = [];
-
-  constructor(private serverService: ServerService) {
-    
+  constructor(db: AngularFireDatabase , private serverService: ServerService) {
+    this.items = db.list("Information/Zones").valueChanges()
   }
 
   ngOnInit() {
@@ -29,7 +29,18 @@ export class OrangeTypeComponent implements OnInit {
 
 
   getOrangeInfo() {
-    this.serverService.getInformation().subscribe((response: Response)=> {});
+    //this.serverService.getInformation().subscribe((response: Response)=> {});
+    this.items.subscribe((_items)=>{
+      _items.forEach(item => {
+        //console.log(item)
+        item.forEach(i => {
+          //console.log(i)
+          this.aux = i.split(":")
+          console.log(this.aux)
+          console.log(this.aux[1])
+        })
+      })
+    })
   }
   
   /*
