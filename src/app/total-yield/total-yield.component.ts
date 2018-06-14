@@ -15,6 +15,9 @@ export class TotalYieldComponent implements OnInit {
   items: Observable<any[]>;
   totalYield: any = 0;
   totalOrchidArea: number = 0;
+
+  yieldPerH: number=0;
+  estimatedAvgField: number = 0;
   
   constructor(db: AngularFireDatabase , private serverService: ServerService) {
 
@@ -33,12 +36,22 @@ export class TotalYieldComponent implements OnInit {
       _items.forEach(item => {
         this.totalYield = this.totalYield + item;
         this.totalOrchidArea = this.totalYield / 3;
+        this.yieldPerH = this.totalYield / 18;
       })
     })
+    }
+
+    getYieldValues(){
+      this.items.subscribe((_items)=>{
+        _items.forEach(item => {
+          console.log("");
+        })
+      })
+    }
     /*this.serverService.getInformation().subscribe((response: Response)=> {
       //this.totalYield = response["Total"].Big + response["Total"].Small;
     });*/
-  }
+  
 
   graph = new Chart({
     chart: {
@@ -65,7 +78,7 @@ export class TotalYieldComponent implements OnInit {
       layout: 'vertical',
       align: 'right',
       verticalAlign: 'middle',
-      itemMarginTop: 40
+      itemMarginTop: 45
   },
     yAxis: {
       className: 'highcharts-yAxis-custom',
@@ -90,7 +103,7 @@ export class TotalYieldComponent implements OnInit {
     series: [
       {
         name: 'Estimated yield per hectare',
-        data: [24, 31, 15, 20, 25, 30, 35],
+        data: [1, 4, 30, 24, 30, 5 , 7],
         color: '#20C687'
         
       },
@@ -103,7 +116,8 @@ export class TotalYieldComponent implements OnInit {
       },
       {
         name: 'Estimated Avg. Yield',
-        data: [28, 28, 28, 28, 28, 28, 28],
+        //data: [28, 28, 28, 28, 28, 28, 28],
+        data: [this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField],
         color: '#F0B33F'
       }
     ]
