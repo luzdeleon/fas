@@ -32,6 +32,7 @@ export class TotalYieldComponent implements OnInit {
     this.items.subscribe((_items)=>{
       _items.forEach(item => {
         this.totalYield = this.totalYield + item;
+        this.totalOrchidArea = this.totalYield / 3;
       })
     })
     /*this.serverService.getInformation().subscribe((response: Response)=> {

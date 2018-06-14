@@ -19,6 +19,17 @@ h2 {
 
 .tags {
     margin: 10px 0 25px;
+    &.area{
+        > span {
+            position: relative;
+            &:after {
+                content: '2';
+                position: absolute;
+                top: -0.2em;
+                font-size: 0.6em;
+            }
+        }
+    }
 }
 span {
     font-size: 20px;
