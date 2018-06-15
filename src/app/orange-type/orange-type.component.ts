@@ -19,13 +19,13 @@ export class OrangeTypeComponent implements OnInit {
   cost: number=0;
   aux: Array<any>;
   totalYield: number = 0;
-  smallPercentage: number = 0;
-  bigPercentage: number = 0;
+  smallPercentage = 0;
+  bigPercentage  = 0;
 
 
   constructor(db: AngularFireDatabase) {
     this.items = db.list("Information/Zones").valueChanges();
-    this.totalY = db.list("Information/Total").valueChanges()
+    this.totalY = db.list("Information/Total").valueChanges();
   }
 
   ngOnInit() {
@@ -70,7 +70,7 @@ export class OrangeTypeComponent implements OnInit {
   smallOrangePieChart = new Chart({
     chart : {
       type: 'pie',
-      height: 95 + "%"
+      height: 250
     },
     title: {
       text: ''
@@ -106,7 +106,7 @@ export class OrangeTypeComponent implements OnInit {
   bigOrangePieChart = new Chart({
     chart : {
       type: 'pie',
-      height: 95 + "%"
+      height: 250
     },
     title: {
       text: ''
