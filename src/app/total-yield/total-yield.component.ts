@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
-import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
 import { AngularFireDatabase  } from 'angularfire2/database';
 import { Observable } from 'rxjs';
@@ -19,7 +18,7 @@ export class TotalYieldComponent implements OnInit {
   yieldPerH: number=0;
   estimatedAvgField: number = 0;
   
-  constructor(db: AngularFireDatabase , private serverService: ServerService) {
+  constructor(db: AngularFireDatabase) {
 
     //const relative = db.object('Information/Total').valueChanges();
 
@@ -29,6 +28,7 @@ export class TotalYieldComponent implements OnInit {
 
   ngOnInit() {
     this.getYieldInfo();
+    
   }
 
   getYieldInfo(){
@@ -37,7 +37,6 @@ export class TotalYieldComponent implements OnInit {
         this.totalYield = this.totalYield + item;
         this.totalOrchidArea = this.totalYield / 3;
         this.yieldPerH = this.totalYield / 18;
-
         this.estimatedAvgField = this.totalYield / 18;
       })
     })
@@ -46,13 +45,10 @@ export class TotalYieldComponent implements OnInit {
     getYieldValues(){
       this.items.subscribe((_items)=>{
         _items.forEach(item => {
-          console.log("");
+          //do something here
         })
       })
     }
-    /*this.serverService.getInformation().subscribe((response: Response)=> {
-      //this.totalYield = response["Total"].Big + response["Total"].Small;
-    });*/
   
   graph = new Chart({
     chart: {

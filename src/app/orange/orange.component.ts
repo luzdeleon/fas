@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs';
 
-import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
 
 
@@ -36,11 +35,6 @@ export class OrangeComponent implements OnInit {
   }
 
   getWeatherInfo(){
-    /*this.serverService.getInformation().subscribe((response: Response)=> {
-      //this.temporaryWeather = response["Weather"];
-      console.log(this.temporaryWeather)
-    });*/
-
     this.items.subscribe((_items)=>{
       _items.forEach((item, index, array) => {
         if(index == array.length -1) {
@@ -53,7 +47,7 @@ export class OrangeComponent implements OnInit {
   }
 
   items: Observable<any[]>;
-  constructor(db: AngularFireDatabase , private serverService: ServerService){
+  constructor(db: AngularFireDatabase){
     this.items = db.list("Information/Weather").valueChanges()
   }
 

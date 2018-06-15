@@ -12,14 +12,8 @@ export class AppComponent {
   title = 'app';
 
   ngOnInit(){
-    this.onGet();
   }
   
-  constructor(private serverService: ServerService){}
+  constructor(){}
   
-  onGet(){
-    this.serverService.getInformation()
-      /*.subscribe((information: any[]) => {
-      }, (error) => console.log(error));*/
-  }
 }

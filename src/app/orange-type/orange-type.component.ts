@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
-import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
 import { element } from 'protractor';
 import {AngularFireDatabase} from 'angularfire2/database';
@@ -16,61 +15,49 @@ export class OrangeTypeComponent implements OnInit {
   smallSizeTotal: number = 0;
   bigSizeTotal: number = 0;
   items: Observable<any[]>;
+  totalY: Observable<any[]>;
   cost: number=0;
   aux: Array<any>;
   totalYield: number = 0;
 
 
-
-  constructor(db: AngularFireDatabase , private serverService: ServerService) {
-    this.items = db.list("Information/Zones").valueChanges()
+  constructor(db: AngularFireDatabase) {
+    this.items = db.list("Information/Zones").valueChanges();
+    this.totalY = db.list("Information/Total").valueChanges()
   }
 
   ngOnInit() {
-    this.getOrangeInfo();
+    this.getOrangeInfo(); 
 
-    
+    this.getPercentages();
   }
 
 
   getOrangeInfo() {
-    //this.serverService.getInformation().subscribe((response: Response)=> {});
     this.items.subscribe((_items)=>{
       _items.forEach(item => {
-        //console.log(item)
         item.forEach(i => {
-          //console.log(i)
           this.aux = i.split(": ")
-          //console.log(this.aux)
           if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
             this.aux[1] = +this.aux[1];
-            //console.log((this.aux[1]))
-            this.bigSizeTotal = this.bigSizeTotal + this.aux[1]
-            //console.log(this.bigSizeTotal)
+            this.bigSizeTotal = this.bigSizeTotal + this.aux[1];
           }else {
             this.aux[1] = +this.aux[1];
-            //console.log((this.aux[1]))
-            this.smallSizeTotal = this.smallSizeTotal + this.aux[1]
-            //console.log(this.smallSizeTotal)
+            this.smallSizeTotal = this.smallSizeTotal + this.aux[1];
           }
           
         })
       })
     })
   }
-  
-  /*
-  getOrangeInfo(){
-    this.serverService.getInformation()
-    .subscribe(zones => this.heroes = this.zonesArray)
-      .subscribe((response: Response) => {const data = response.json();
-        this.oranges = data.Total;
 
-        this.auxArray = data["Zones"];
-    },
-    (error) => console.log(error));
-  }*/
-
+  getPercentages(){
+    this.totalY.subscribe((_items)=> {
+      _items.forEach(item => {
+        this.totalYield = this.totalYield + item
+      })
+    });
+  }
 
   smallOrangePieChart = new Chart({
     chart : {

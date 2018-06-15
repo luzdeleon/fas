@@ -13,7 +13,6 @@ import { OrangeTypeComponent } from './orange-type/orange-type.component';
 
 import { environment } from '../environments/environment';
 
-import {ServerService} from './server.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
@@ -31,7 +30,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
     AngularFireAuthModule,
     HttpModule
   ],
-  providers: [ServerService, AngularFirestore],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
