@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="19px" viewBox="0 0 48 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>SM1 3 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-1136.000000, -770.000000)">
+            <g id="Placeholder-Copy" transform="translate(1131.000000, 766.000000)">
+                <g id="SM1-3-Copy">
+                    <text id="Chain-Store" font-family="Roboto-Black, Roboto" font-size="7" font-weight="700" letter-spacing="0.210000008" fill="#008C95">
+                        <tspan x="30" y="15">CHAIN</tspan>
+                        <tspan x="30" y="23">STORE</tspan>
+                    </text>
+                    <path d="M15.3961827,26 C9.89045672,23.9442509 6,17.2630237 6,12.1884068 C6,7.11378984 10.0294373,3 15,3 C19.9705627,3 24,7.11378984 24,12.1884068 C24,17.2630237 20.1380426,24.0530783 15.3961827,26 Z" id="Oval" fill="#FF894B" transform="translate(15.000000, 14.500000) rotate(60.000000) translate(-15.000000, -14.500000) "></path>
+                    <g id="Group" transform="translate(9.000000, 10.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11,7 C11,7.55233333 10.5523333,8 10,8 C9.44716667,8 9,7.55233333 9,7 C9,6.44783333 9.44716667,6 10,6 C10.5523333,6 11,6.44783333 11,7 Z" id="Stroke-1"></path>
+                        <path d="M5,7 C5,7.55233333 4.55233333,8 4,8 C3.44716667,8 3,7.55233333 3,7 C3,6.44783333 3.44716667,6 4,6 C4.55233333,6 5,6.44783333 5,7 Z" id="Stroke-3"></path>
+                        <polyline id="Stroke-5" points="4 4.91891892 4 0 12 0 12 7"></polyline>
+                        <path d="M0,8 L0,3.6 C0,2.72 0.72,2 1.6,2 L4,2" id="Stroke-7"></path>
+                        <path d="M1,4 L1,3.375 C1,3.168875 1.3375,3 1.75,3 L3,3" id="Stroke-13"></path>
+                        <path d="M6,7 L8,7" id="Stroke-9"></path>
+                        <path d="M0,8 L2,8" id="Stroke-11"></path>
+                        <path d="M0,6 L2,6" id="Stroke-15"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

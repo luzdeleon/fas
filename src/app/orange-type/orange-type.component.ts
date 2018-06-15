@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from "angular-highcharts";
-import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
+import { element } from 'protractor';
+import {AngularFireDatabase} from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-orange-type',
@@ -10,26 +12,57 @@ import {Response} from '@angular/http';
 })
 export class OrangeTypeComponent implements OnInit {
 
-  counter: number  = 0;
+  smallSizeTotal: number = 0;
+  bigSizeTotal: number = 0;
+  items: Observable<any[]>;
+  totalY: Observable<any[]>;
+  cost: number=0;
+  aux: Array<any>;
+  totalYield: number = 0;
+  smallPercentage: number = 0;
+  bigPercentage: number = 0;
 
-  oranges: number = 0;
 
-  constructor(private serverService: ServerService) {
-    
+  constructor(db: AngularFireDatabase) {
+    this.items = db.list("Information/Zones").valueChanges();
+    this.totalY = db.list("Information/Total").valueChanges()
   }
 
   ngOnInit() {
+    this.getOrangeInfo(); 
+
+    this.getPercentages();
+
     
   }
 
 
-  getOrangeInfo(){
-    this.serverService.getInformation()
-      .subscribe((response: Response) => {const data = response.json();
-        this.oranges = data.Total;
-        console.log(this.oranges);
-    },
-    (error) => console.log(error));
+  getOrangeInfo() {
+    this.items.subscribe((_items)=>{
+      _items.forEach(item => {
+        item.forEach(i => {
+          this.aux = i.split(": ")
+          if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
+            this.aux[1] = +this.aux[1];
+            this.bigSizeTotal = this.bigSizeTotal + this.aux[1];
+            this.bigPercentage = this.bigSizeTotal *100;
+          }else {
+            this.aux[1] = +this.aux[1];
+            this.smallSizeTotal = this.smallSizeTotal + this.aux[1];
+            this.smallPercentage = this.smallSizeTotal * 100;
+          }
+          
+        })
+      })
+    })
+  }
+
+  getPercentages(){
+    this.totalY.subscribe((_items)=> {
+      _items.forEach(item => {
+        this.totalYield = this.totalYield + item
+      })
+    });
   }
 
   smallOrangePieChart = new Chart({
@@ -58,10 +91,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 40
+        y: 52
       }, {
         name : "% of non-estimated avg. field",
-        y: 60
+        y: 48
       }]
     }
   ]
@@ -94,10 +127,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 60
+        y: 48
       }, {
         name : "% of non-estimated avg. field",
-        y: 40
+        y: 52
       }]
     }
   ]

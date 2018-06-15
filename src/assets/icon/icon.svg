@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="48px" viewBox="0 0 51 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 51 51 51 51 0 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-41.000000, -13.000000)">
+            <g id="Name">
+                <g id="Group-5" transform="translate(41.000000, 10.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <polygon id="Stroke-3" stroke="#20C687" stroke-width="2" stroke-linejoin="round" mask="url(#mask-2)" points="1 46 9 46 9 31 1 31"></polygon>
+                    <path d="M9,44.7457783 C31.4662917,52.2739105 24.3254583,52.6328018 50,39.7281682 C47.7262083,37.4425971 45.9298958,36.5436516 43.5817917,37.2193632 L34.3371458,40.3017075" id="Stroke-5" stroke="#20C687" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    <path d="M9,33 L15.6710028,33 C20.586698,33 23.7996198,35.6928 24.8436317,36.5874 C27.6254399,36.6144 27.8430813,36.5874 31.5146345,36.5874 C34.8284552,36.5874 34.8284552,42 31.5146345,42 L19.8403796,42" id="Stroke-6" stroke="#20C687" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    <g id="Icon-/-Naranja" mask="url(#mask-2)" stroke-linejoin="round">
+                        <g transform="translate(20.000000, 4.000000)">
+                            <g id="Group-5" transform="translate(9.870000, 6.340196)" stroke-linecap="round">
+                                <path d="M0.54,7.39215686 L0.54,0" id="Stroke-1" stroke="#20C687" stroke-width="2"></path>
+                            </g>
+                            <g id="Group-11" transform="translate(0.390000, 0.142157)">
+                                <polyline id="Stroke-6" stroke="#20C687" stroke-width="2" stroke-linecap="round" points="8.07 13.7039216 10.02 14.4431373 11.97 13.7039216"></polyline>
+                                <path d="M10.08,8.52941176 C13.0572,8.52941176 15.48,6.23286765 15.48,3.41176471 C12.5028,3.41176471 10.08,5.70788235 10.08,8.52941176 Z" id="Stroke-7" stroke="#20C687" stroke-width="2"></path>
+                                <path d="M4.68,5.11764706 C7.6572,5.11764706 10.08,2.82110294 10.08,0 C7.1028,0 4.68,2.29611765 4.68,5.11764706 Z" id="Stroke-7" stroke="#20C687" stroke-width="2" transform="translate(7.380000, 2.558824) scale(-1, 1) translate(-7.380000, -2.558824) "></path>
+                                <path d="M0.659844,18.7648907 C0.659844,23.6633034 4.850784,27.6354789 10.019844,27.6354789 C15.188904,27.6354789 19.379844,23.6633034 19.379844,18.7648907 C19.379844,13.8653691 15.188904,9.89430245 10.019844,9.89430245 C9.061614,9.89430245 0.659844,10.2846083 0.659844,18.7648907 Z" id="Stroke-9" stroke="#20C687" stroke-width="2" stroke-linecap="round"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

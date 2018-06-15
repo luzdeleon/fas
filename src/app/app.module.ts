@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ChartModule } from 'angular-highcharts';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpModule } from '@angular/http';
 
@@ -13,7 +13,7 @@ import { OrangeTypeComponent } from './orange-type/orange-type.component';
 
 import { environment } from '../environments/environment';
 
-import {ServerService} from './server.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {ServerService} from './server.service';
     AngularFireAuthModule,
     HttpModule
   ],
-  providers: [ServerService],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs';
 
-import {ServerService} from '../server.service';
 import {Response} from '@angular/http';
+
 
 @Component({
   selector: 'app-orange',
@@ -31,32 +31,27 @@ export class OrangeComponent implements OnInit {
   ngOnInit() {
     this.getWeatherInfo();
 
-    this.randomIndex = Math.random() * this.temporaryWeather.length;
-    this.buildIndexString = this.buildIndexString + (this.randomIndex + 1);
     
-    this.getData();
   }
 
   getWeatherInfo(){
-    this.serverService.getInformation()
-      .subscribe((response: Response) => {const data = response.json();
-
-        this.temporaryWeather = data["Weather"];
+    this.items.subscribe((_items)=>{
+      _items.forEach((item, index, array) => {
+        if(index == array.length -1) {
+          this.weather = item[1];
+          this.date = item[0];
+        }
+      })
       
-      ;
-    },
-    (error) => console.log(error));
-    
-  }
-
-  getData() {
-    
+    })
   }
 
   items: Observable<any[]>;
-  constructor(private serverService: ServerService){
-
-
+  constructor(db: AngularFireDatabase){
+    this.items = db.list("Information/Weather").valueChanges()
   }
+
+  today =  new Date();
+
 
 }

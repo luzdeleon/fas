@@ -9,12 +9,18 @@
           </div>
           <div class="col-md-4">
               <h2>expected harvest date</h2>
-              <span>{{temporaryWeather[buildIndexString]}}</span>
+              <span>{{date}}</span>
           </div>
           <div class="col-md-4">
               <h2>weather</h2>
-              <img src="" alt="" class="weather-picture">
-              <span class="weather-txt">{{temporaryWeather[buildIndexString]}}</span>
+              <img src="../../assets/img/Storm.svg" alt="" class="weather-picture" *ngIf="weather=='Thunderstorms' || weather=='Scattered Thunderstorms'">
+              <img src="../../assets/img/Cloudy.svg" alt="" class="weather-picture" *ngIf="weather=='Partly Cloudy'">
+              <img src="../../assets/img/Windy.svg" alt="" class="weather-picture" *ngIf="weather=='Windy'">
+              <img src="../../assets/img/Cloudy.svg" alt="" class="weather-picture" *ngIf="weather=='Partly Cloudy'">
+              <img src="../../assets/img/Sun.svg" alt="" class="weather-picture" *ngIf="weather=='Sunny'">
+              <img src="../../assets/img/Snow.svg" alt="" class="weather-picture" *ngIf="weather=='Snow'">
+              <img src="../../assets/img/Rain.svg" alt="" class="weather-picture" *ngIf="weather=='Storm'">
+              <span class="weather-txt">{{weather}}</span>
           </div>
     </div>
   </div>

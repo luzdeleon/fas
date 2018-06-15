@@ -7,14 +7,14 @@
               <div class="col-lg-2 col-xs-12 weight">
                   <h2>orange weight</h2>
                   <div class="tbContainer">
-                      <i class="orange"></i>
+                      <img src="/assets/icon/Naranja.svg"  alt="orange" class="orange-icon">
                       <span>200g</span>
                   </div>
                 </div>
             
                 <div class="col-lg-3 col-xs-12 offering">
                   <h2>you can offer</h2>
-                  <span class="offering-amount-txt">201 T</span>
+                  <span class="offering-amount-txt">{{smallSizeTotal}} T</span>
                   <span class="normal-txt">
                     You can sell to
                   </span>
@@ -25,15 +25,19 @@
                   </div>
                 </div>
             
-                <div class="col-lg-4 col-xs-12 sales">
+                <div class="col-lg-3 col-xs-12 sales">
                   <h2>potential sales</h2>
-                  <span class="prediction">$1,256,250 USD</span>
-                  <span class="cost"> at $1.25 USD / 200g orange</span>
+                  <span class="prediction">${{[(smallSizeTotal * 1000) / 0.250] * 0.11}} USD</span>
+                  <span class="cost"> at $0.11 USD / 200g orange</span>
                 </div>
             
                 <div class="col-lg-3 col-xs-12 percentage">
                   <h2>% yield</h2>
                   <div [chart]="smallOrangePieChart"></div>
+                </div>
+                <div class="col-lg-4 col-xs-12 text-overlay">
+                    <span>{{smallPercentage / totalYield }} % </span>
+                    <span class="subtitle">of estimated avg. yield</span>
                 </div>
           </div>
         </div>
@@ -44,14 +48,14 @@
                 <div class="col-lg-2 col-xs-12 weight">
                     <h2>orange weight</h2>
                     <div class="tbContainer">
-                        <i class="orange"></i>
+                        <img src="/assets/icon/Naranja.svg" alt="orange" class="orange-icon big">
                         <span>250g</span>
                     </div>
                   </div>
               
                   <div class="col-lg-3 col-xs-12 offering">
                     <h2>you can offer</h2>
-                    <span class="offering-amount-txt">303 T</span>
+                    <span class="offering-amount-txt">{{bigSizeTotal}} T</span>
                     <span class="normal-txt">
                       You can sell to
                     </span>
@@ -61,19 +65,22 @@
                     </div>
                   </div>
               
-                  <div class="col-lg-4 col-xs-12 sales">
+                  <div class="col-lg-3 col-xs-12 sales">
                     <h2>potential sales</h2>
-                    <span class="prediction">$1,757,400 USD</span>
-                    <span class="cost"> at $1.45 USD / 250 orange</span>
+                    <span class="prediction">${{[(bigSizeTotal * 1000) / 0.250] * 0.18}} USD</span>
+                    <span class="cost"> at $0.18 USD / 250g orange</span>
                   </div>
               
                   <div class="col-lg-3 col-xs-12 percentage">
                     <h2>% yield</h2>
                     <div [chart]="bigOrangePieChart"></div>
                   </div>
+                  <div class="col-lg-4 col-xs-12 text-overlay">
+                    <span>{{bigPercentage / totalYield}} %</span>
+                    <span class="subtitle">of estimated avg. yield</span>
+                  </div>
             </div>
           </div>
           <!--end of temporary code-->
     </div>
   </div>
-  

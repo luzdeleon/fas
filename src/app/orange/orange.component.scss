@@ -52,6 +52,7 @@ span {
     }
     &.weather-txt{
         font-size: 12px;
+        font-weight: 300;
         @media screen and (min-device-width: $bp-xlarge){
             font-size: 1em;
         }
