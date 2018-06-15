@@ -109,13 +109,13 @@ export class TotalYieldComponent implements OnInit {
       {
         name: 'Min. Expected Avg. Yield',
         data: [25, 25, 25, 25, 25, 25, 25],
-        //dashStyle: 'dash',
+        dashStyle: 'dash',
         color: '#7A7A7A'
       },
       {
         name: 'Estimated Avg. Yield',
-        //data: [28, 28, 28, 28, 28, 28, 28],
-        data: [this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField],
+        data: [12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5],
+        //data: [this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField],
         color: '#F0B33F'
       }
     ]

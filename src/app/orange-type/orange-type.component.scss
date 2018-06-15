@@ -95,6 +95,16 @@ span {
     right:0;
     text-align: right;
     padding-top: 1em;
+    span {
+        display: block;
+        &.subtitle {
+            font-weight: 300;
+            font-size: 0.5em;
+            width: 80px;
+            float: right;
+            margin-top: -10px;
+        }
+    }
     @media screen and (max-device-width: 1200px){
         padding-top: 2.5em;
     }

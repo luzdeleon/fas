@@ -19,6 +19,8 @@ export class OrangeTypeComponent implements OnInit {
   cost: number=0;
   aux: Array<any>;
   totalYield: number = 0;
+  smallPercentage: number = 0;
+  bigPercentage: number = 0;
 
 
   constructor(db: AngularFireDatabase) {
@@ -30,6 +32,8 @@ export class OrangeTypeComponent implements OnInit {
     this.getOrangeInfo(); 
 
     this.getPercentages();
+
+    
   }
 
 
@@ -41,9 +45,11 @@ export class OrangeTypeComponent implements OnInit {
           if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
             this.aux[1] = +this.aux[1];
             this.bigSizeTotal = this.bigSizeTotal + this.aux[1];
+            this.bigPercentage = this.bigSizeTotal *100;
           }else {
             this.aux[1] = +this.aux[1];
             this.smallSizeTotal = this.smallSizeTotal + this.aux[1];
+            this.smallPercentage = this.smallSizeTotal * 100;
           }
           
         })
@@ -85,10 +91,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 40
+        y: 52
       }, {
         name : "% of non-estimated avg. field",
-        y: 60
+        y: 48
       }]
     }
   ]
@@ -121,10 +127,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 60
+        y: 48
       }, {
         name : "% of non-estimated avg. field",
-        y: 40
+        y: 52
       }]
     }
   ]

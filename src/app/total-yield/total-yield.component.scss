@@ -36,7 +36,7 @@ span {
     font-weight: 900;
     color: $dark-gray;
     @media screen and (min-device-width: $bp-xlarge){
-        font-size: 1.4em;
+        font-size: 1em;
     }
     &.weather-txt{
         font-size: 12px;
@@ -67,7 +67,7 @@ span {
                 //left: 8em;
             }
             @media screen and (min-device-width: $bp-xlarge){
-                top: 4.3em;
+                top: 6.7em;
                 //left: 2em;
             }
         }

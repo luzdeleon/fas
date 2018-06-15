@@ -51,4 +51,7 @@ export class OrangeComponent implements OnInit {
     this.items = db.list("Information/Weather").valueChanges()
   }
 
+  today =  new Date();
+
+
 }

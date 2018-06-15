@@ -36,7 +36,8 @@
                   <div [chart]="smallOrangePieChart"></div>
                 </div>
                 <div class="col-lg-4 col-xs-12 text-overlay">
-                    <span>test</span>
+                    <span>{{smallPercentage / totalYield }} % </span>
+                    <span class="subtitle">of estimated avg. yield</span>
                 </div>
           </div>
         </div>
@@ -75,7 +76,8 @@
                     <div [chart]="bigOrangePieChart"></div>
                   </div>
                   <div class="col-lg-4 col-xs-12 text-overlay">
-                    <span>test</span>
+                    <span>{{bigPercentage / totalYield}} %</span>
+                    <span class="subtitle">of estimated avg. yield</span>
                   </div>
             </div>
           </div>
