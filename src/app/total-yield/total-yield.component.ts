@@ -109,7 +109,7 @@ export class TotalYieldComponent implements OnInit {
       {
         name: 'Min. Expected Avg. Yield',
         data: [25, 25, 25, 25, 25, 25, 25],
-        dashStyle: 'dash',
+        //dashStyle: 'dash',
         color: '#7A7A7A'
       },
       {
