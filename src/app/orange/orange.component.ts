@@ -42,9 +42,13 @@ export class OrangeComponent implements OnInit {
     });*/
 
     this.items.subscribe((_items)=>{
-      _items.forEach(item => {
-        //do something here
+      _items.forEach((item, index, array) => {
+        if(index == array.length -1) {
+          this.weather = item[1];
+          this.date = item[0];
+        }
       })
+      
     })
   }
 

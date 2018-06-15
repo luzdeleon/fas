@@ -37,6 +37,8 @@ export class TotalYieldComponent implements OnInit {
         this.totalYield = this.totalYield + item;
         this.totalOrchidArea = this.totalYield / 3;
         this.yieldPerH = this.totalYield / 18;
+
+        this.estimatedAvgField = this.totalYield / 18;
       })
     })
     }
@@ -83,7 +85,7 @@ export class TotalYieldComponent implements OnInit {
     yAxis: {
       className: 'highcharts-yAxis-custom',
       title: {
-          text: 'YIELD',
+          text: 'YIELD [T]',
           style: {
             color: '#262F34'
           }

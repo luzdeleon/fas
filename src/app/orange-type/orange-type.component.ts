@@ -18,6 +18,7 @@ export class OrangeTypeComponent implements OnInit {
   items: Observable<any[]>;
   cost: number=0;
   aux: Array<any>;
+  totalYield: number = 0;
 
 
 
@@ -48,7 +49,7 @@ export class OrangeTypeComponent implements OnInit {
             //console.log(this.bigSizeTotal)
           }else {
             this.aux[1] = +this.aux[1];
-            console.log((this.aux[1]))
+            //console.log((this.aux[1]))
             this.smallSizeTotal = this.smallSizeTotal + this.aux[1]
             //console.log(this.smallSizeTotal)
           }
