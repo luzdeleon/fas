@@ -70,7 +70,7 @@ export class OrangeTypeComponent implements OnInit {
   smallOrangePieChart = new Chart({
     chart : {
       type: 'pie',
-      height: 250
+      height: 160
     },
     title: {
       text: ''
@@ -106,7 +106,7 @@ export class OrangeTypeComponent implements OnInit {
   bigOrangePieChart = new Chart({
     chart : {
       type: 'pie',
-      height: 250
+      height: 160
     },
     title: {
       text: ''

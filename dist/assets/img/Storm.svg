@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Storm</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Storm" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30.8461538,12.5 C32.0910769,9.56 29.6922308,7.12455263 26.5384615,7.52631579 C25.4599231,4.65428947 22.7153846,2 19.5384615,2 C15.6313846,2 11.79,4.709 11.4615385,8.63157895 C8.01592308,8.96536842 5,12.1910789 5,15.8157895 C5,19.6648684 8.24961538,23 12,23 L27.5690769,23 C30.5683077,23 33,20.5529474 33,17.4736842 C33,15.5599211 32.279,13.5035789 30.8461538,12.5 Z" id="Stroke-1" stroke="#262F34" stroke-width="2"></path>
+        <g id="Group" transform="translate(5.000000, 26.000000)" stroke="#262F34" stroke-width="2">
+            <polyline id="Stroke-3" points="0 6.92156564 6.5799598 3.16321936 2.99995488 1.92161076 6.92156564 0"></polyline>
+            <polyline id="Stroke-3-Copy" points="9 6.92156564 15.5799598 3.16321936 11.9999549 1.92161076 15.9215656 0"></polyline>
+            <polyline id="Stroke-3-Copy-2" points="18 6.92156564 24.5799598 3.16321936 20.9999549 1.92161076 24.9215656 0"></polyline>
+        </g>
+    </g>
+</svg>

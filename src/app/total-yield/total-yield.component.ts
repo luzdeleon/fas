@@ -68,7 +68,7 @@ export class TotalYieldComponent implements OnInit {
   graph = new Chart({
     chart: {
       type: 'line',
-      height: 295
+      height: 220
     },
     title: {
       text: ''
@@ -117,7 +117,7 @@ export class TotalYieldComponent implements OnInit {
     series: [
       {
         name: 'Estimated yield per hectare',
-        data: [10, 2, 9, 4, 3, 9,  25, 25],
+        data: [60, 40, 29, 24, 30, 59,  55],
         //data: this.arrayTest,
         color: '#20C687'
         
