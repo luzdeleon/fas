@@ -1,6 +1,7 @@
 @import "../../app/styles/variables";
 
 .total-yield {
+    max-height: 600px;
     padding: 27px 0 30px;
     h1 + .container-fluid{
         padding-top: 40px;
@@ -56,6 +57,7 @@ span {
         span {
             display: block;
             position: absolute;
+            text-align:center;
             &:last-of-type{
                 padding-top: 1.9em;
                 @media screen and (min-device-width:1200px) and (max-device-width: 1919px){
@@ -63,11 +65,11 @@ span {
                 }
             }
             @media screen and (min-device-width: $bp-small) and (max-device-width: $bp-xlarge){
-                top: 8.5em;
+                top: 5.5em;
                 //left: 8em;
             }
             @media screen and (min-device-width: $bp-xlarge){
-                top: 6.7em;
+                top: 4.7em;
                 //left: 2em;
             }
         }

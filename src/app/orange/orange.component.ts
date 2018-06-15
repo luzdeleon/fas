@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs';
-
+import { MomentModule } from 'angular2-moment';
 import {Response} from '@angular/http';
 
 
@@ -25,7 +25,10 @@ export class OrangeComponent implements OnInit {
   weather: string = "";
   minTemp: number = 0;
   maxTemp: number = 0;
-  
+  today =  Date.now();
+  dateDiff: number = 0;
+  expectedDate = Date;
+
 
 
   ngOnInit() {
@@ -40,6 +43,12 @@ export class OrangeComponent implements OnInit {
         if(index == array.length -1) {
           this.weather = item[1];
           this.date = item[0];
+          //this.date = Date.parse(this.date);
+          //this.dateDiff = this.today - Date.parse(this.date);
+
+          //this.expectedDate = Date.parse(this.date);
+          //console.log(this.today)
+          //console.log(Date.parse(this.date))
         }
       })
       
@@ -50,8 +59,6 @@ export class OrangeComponent implements OnInit {
   constructor(db: AngularFireDatabase){
     this.items = db.list("Information/Weather").valueChanges()
   }
-
-  today =  new Date();
 
 
 }

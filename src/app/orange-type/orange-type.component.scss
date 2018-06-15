@@ -92,7 +92,7 @@ span {
 
 .text-overlay{
     position: absolute;
-    right:0;
+    right:3.5em;
     text-align: right;
     padding-top: 1em;
     span {
@@ -110,6 +110,7 @@ span {
     }
     &:after{
         content: '';
+        display:none;
         width: 80px;
         background: $gray;
         height: 1px;

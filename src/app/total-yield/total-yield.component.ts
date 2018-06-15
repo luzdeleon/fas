@@ -11,23 +11,32 @@ import { Observable } from 'rxjs';
 })
 export class TotalYieldComponent implements OnInit {
 
+  toOranges: Observable<any[]>;
   items: Observable<any[]>;
   totalYield: any = 0;
   totalOrchidArea: number = 0;
 
   yieldPerH: number=0;
   estimatedAvgField: number = 0;
+  arrayTest= [];
+  arraySmallTest = [];
+  
+  smallSizeTotal: number = 0;
+  bigSizeTotal: number = 0;
+  
+  aux: Array<any>;
   
   constructor(db: AngularFireDatabase) {
 
     //const relative = db.object('Information/Total').valueChanges();
-
+    this.toOranges = db.list("Information/Zones").valueChanges()
     this.items = db.list("Information/Total").valueChanges()
   }
   
 
   ngOnInit() {
     this.getYieldInfo();
+    this.getOrangeInfo();
     
   }
 
@@ -42,17 +51,24 @@ export class TotalYieldComponent implements OnInit {
     })
     }
 
-    getYieldValues(){
-      this.items.subscribe((_items)=>{
+    getOrangeInfo() {
+      this.toOranges.subscribe((_items)=>{
         _items.forEach(item => {
-          //do something here
+          item.forEach(i => {
+            this.aux = i.split(": ")
+            this.arrayTest.push(this.aux[1])
+            //this.bigSizeTotal = this.bigSizeTotal + this.aux[1] + this.smallSizeTotal;
+            //this.arrayTest.push(this.bigSizeTotal)
+            console.log(this.aux)
+          })
         })
       })
     }
-  
+
   graph = new Chart({
     chart: {
-      type: 'line'
+      type: 'line',
+      height: 295
     },
     title: {
       text: ''
@@ -101,7 +117,8 @@ export class TotalYieldComponent implements OnInit {
     series: [
       {
         name: 'Estimated yield per hectare',
-        data: [1, 4, 30, 24, 30, 5 , 7],
+        data: [10, 2, 9, 4, 3, 9,  25, 25],
+        //data: this.arrayTest,
         color: '#20C687'
         
       },
