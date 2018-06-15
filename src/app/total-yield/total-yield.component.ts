@@ -52,7 +52,6 @@ export class TotalYieldComponent implements OnInit {
       //this.totalYield = response["Total"].Big + response["Total"].Small;
     });*/
   
-
   graph = new Chart({
     chart: {
       type: 'line'
@@ -64,6 +63,7 @@ export class TotalYieldComponent implements OnInit {
       enabled: false
     },
     xAxis: {
+      allowDecimals : false,
       className: 'highcharts-xAxis-custom',
       title: {
         text: 'ZONE',
