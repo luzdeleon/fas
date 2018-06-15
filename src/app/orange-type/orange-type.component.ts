@@ -45,10 +45,12 @@ export class OrangeTypeComponent implements OnInit {
           if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
             this.aux[1] = +this.aux[1];
             this.bigSizeTotal = this.bigSizeTotal + this.aux[1];
+            console.log(this.bigSizeTotal)
             this.bigPercentage = this.bigSizeTotal *100;
           }else {
             this.aux[1] = +this.aux[1];
             this.smallSizeTotal = this.smallSizeTotal + this.aux[1];
+            console.log(this.smallSizeTotal)
             this.smallPercentage = this.smallSizeTotal * 100;
           }
           
