@@ -1,5 +1,10 @@
 @import "../app/styles/variables";
-
+img, h1 { 
+    display: inline-block;
+}
+img {
+    margin-right: 15px;
+}
 .app-header {
     background: $dark-gray;
     height: 1.9em;
