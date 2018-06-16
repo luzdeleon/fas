@@ -4,7 +4,6 @@ import { ChartModule } from 'angular-highcharts';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { HttpModule } from '@angular/http';
 import { MomentModule } from 'angular2-moment';
 import { AppComponent } from './app.component';
 import { TotalYieldComponent } from './total-yield/total-yield.component';
@@ -28,7 +27,6 @@ import { AngularFirestore } from 'angularfire2/firestore';
     AngularFireModule.initializeApp(environment.firebase, 'faas-dtis'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    HttpModule,
     MomentModule
   ],
   providers: [AngularFirestore],

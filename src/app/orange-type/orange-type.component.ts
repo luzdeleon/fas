@@ -40,21 +40,33 @@ export class OrangeTypeComponent implements OnInit {
   getOrangeInfo() {
     this.items.subscribe((_items)=>{
       _items.forEach(item => {
-        item.forEach(i => {
-          this.aux = i.split(": ")
+        
+       
+        item.forEach((i, index, array)=>{
+          if(index == 0){
+            this.smallSizeTotal = this.smallSizeTotal + item[index];
+            this.smallPercentage = this.smallSizeTotal * 100 ;
+          } else {
+            this.bigSizeTotal = this.bigSizeTotal + item[index];
+            this.bigPercentage = this.bigSizeTotal *100;
+          }
+        });
+        
+        /*item.forEach(i => {
+          console.log(i)
           if(this.aux[0] === "Big Size" || this.aux[0] == " Big Size"){
             this.aux[1] = +this.aux[1];
             this.bigSizeTotal = this.bigSizeTotal + this.aux[1];
-            console.log(this.bigSizeTotal)
+            //console.console.log(this.bigSizeTotal)
             this.bigPercentage = this.bigSizeTotal *100;
           }else {
             this.aux[1] = +this.aux[1];
             this.smallSizeTotal = this.smallSizeTotal + this.aux[1];
-            console.log(this.smallSizeTotal)
+            //console.log(this.smallSizeTotal)
             this.smallPercentage = this.smallSizeTotal * 100;
           }
           
-        })
+        })*/
       })
     })
   }

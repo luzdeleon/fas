@@ -1,27 +1,18 @@
-# Fas
+# Farming as a Service
+This is a project from a Monterrey, Mexico team
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+#Prerequisites
+You should have installed:
+1. Node.js -v 8.11.1 / npm 5.6.0
+2. Angular CLI -v 6.0.8
 
-## Development server
+#Run project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To see this project:
 
-## Code scaffolding
+1. Download and unzip project folder
+2. Open OS X Terminal / Windows command prompt
+3. Run `npm install` for installing all project dependencies
+4. Run `ng serve` for running dev server
+4. Navigate to  `http://localhost:4200/`. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
