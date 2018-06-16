@@ -6,9 +6,9 @@
     }
     .type {
         position: relative;
-        margin: 4.3em 0;
+        margin: 0;
         @media screen and (min-device-width: $bp-xlarge){
-            margin: 3.8em 0;
+            margin: 0em 0;
         }
     }
 }
@@ -92,7 +92,7 @@ span {
 
 .text-overlay{
     position: absolute;
-    right:3.5em;
+    right:0em;
     text-align: right;
     padding-top: 1em;
     span {

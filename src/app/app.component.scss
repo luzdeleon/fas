@@ -2,21 +2,16 @@
 
 .app-header {
     background: $dark-gray;
-    height: 40px;
+    height: 1.9em;
     padding-left: 30px;
     @media screen and (min-device-width: $bp-xlarge){
-        padding-left: 2em;
-        height: 4em;
+        padding-left: 3em;
     }
     h1 {
         color: $green-neon;
         font-weight: 300;
         margin: 0;
-        line-height: 75px;
-        font-size: 30px;
-        @media screen and (min-device-width: $bp-xlarge){
-            font-size: 2em;
-            line-height: 2em;
-        }
+        font-size: 25px;
+        line-height: 1.9em;
     }
 }
