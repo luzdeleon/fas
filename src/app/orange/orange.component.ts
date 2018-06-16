@@ -33,8 +33,6 @@ export class OrangeComponent implements OnInit {
 
   ngOnInit() {
     this.getWeatherInfo();
-
-    
   }
 
   getWeatherInfo(){
@@ -59,6 +57,4 @@ export class OrangeComponent implements OnInit {
   constructor(db: AngularFireDatabase){
     this.items = db.list("Information/Weather").valueChanges()
   }
-
-
 }
