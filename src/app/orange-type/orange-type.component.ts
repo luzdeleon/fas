@@ -105,10 +105,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 52
+        y: 39
       }, {
         name : "% of non-estimated avg. field",
-        y: 48
+        y: 61
       }]
     }
   ]
@@ -141,10 +141,10 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 48
+        y: 61
       }, {
         name : "% of non-estimated avg. field",
-        y: 52
+        y: 39
       }]
     }
   ]
