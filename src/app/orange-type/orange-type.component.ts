@@ -29,7 +29,7 @@ export class OrangeTypeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOrangeInfo(); 
+    //this.getOrangeInfo(); 
 
     this.getPercentages();
 
@@ -42,7 +42,7 @@ export class OrangeTypeComponent implements OnInit {
       _items.forEach(item => {
         
        
-        item.forEach((i, index, array)=>{
+        /*item.forEach((i, index, array)=>{
           if(index == 0){
             this.smallSizeTotal = this.smallSizeTotal + item[index];
             this.smallPercentage = this.smallSizeTotal * 100 ;
@@ -50,7 +50,7 @@ export class OrangeTypeComponent implements OnInit {
             this.bigSizeTotal = this.bigSizeTotal + item[index];
             this.bigPercentage = this.bigSizeTotal *100;
           }
-        });
+        });*/
         
         /*item.forEach(i => {
           console.log(i)
@@ -73,8 +73,16 @@ export class OrangeTypeComponent implements OnInit {
 
   getPercentages(){
     this.totalY.subscribe((_items)=> {
-      _items.forEach(item => {
-        this.totalYield = this.totalYield + item
+      _items.forEach((item, index, array) => {
+        this.totalYield = this.totalYield + item;
+        if(index == 0){
+          this.bigSizeTotal = array[0];
+          this.bigPercentage = this.bigSizeTotal *100;
+        } else {
+          this.smallSizeTotal = array[1]; 
+          this.smallPercentage = this.smallSizeTotal *100;
+        }
+        
       })
     });
   }
@@ -105,7 +113,7 @@ export class OrangeTypeComponent implements OnInit {
       size: '100%',
       data: [{
         name : "% of estimated avg. field",
-        y: 39
+        y: 33
       }, {
         name : "% of non-estimated avg. field",
         y: 61
