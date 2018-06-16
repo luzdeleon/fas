@@ -103,7 +103,6 @@ series: this.arrayForGraph
             this.aux = this.aux + i;
           });
           this.arrayForGraph.push(this.aux)
-          //console.log(this.arrayForGraph)
           return this.arrayForGraph;
         })
         
@@ -164,22 +163,21 @@ series: this.arrayForGraph
       series: [
         {
           name: 'Estimated yield per hectare',
-          //data: [10, 2, 9, 4, 3, 9,  25, 25],
-          data: this.arrayForGraph,
+          data: [35, 25, 37, 30, 25, 35],
+          //data: this.arrayForGraph,
           color: '#20C687'
           
         },
 
         {
           name: 'Min. Expected Avg. Yield',
-          data: [25, 25, 25, 25, 25, 25, 25],
+          data: [37, 37, 37, 37, 37, 37],
           //dashStyle: 'dash',
           color: '#7A7A7A'
         },
         {
           name: 'Estimated Avg. Yield',
-          data: [12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5],
-          //data: [this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField, this.estimatedAvgField],
+          data: [19, 19, 19, 19, 19, 19, 19],
           color: '#F0B33F'
         }
       ]
