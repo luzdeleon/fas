@@ -20,7 +20,7 @@ export class OrangeTypeComponent implements OnInit {
   aux: Array<any>;
   totalYield: number = 0;
   smallPercentage = 0;
-  bigPercentage  = 0;
+  bigPercentage: number  = 0;
 
 
   constructor(db: AngularFireDatabase) {
@@ -73,17 +73,18 @@ export class OrangeTypeComponent implements OnInit {
 
   getPercentages(){
     this.totalY.subscribe((_items)=> {
+      
+      this.totalYield = 0;
       _items.forEach((item, index, array) => {
         this.totalYield = this.totalYield + item;
-        if(index == 0){
-          this.bigSizeTotal = array[0];
-          this.bigPercentage = this.bigSizeTotal *100;
-        } else {
-          this.smallSizeTotal = array[1]; 
-          this.smallPercentage = this.smallSizeTotal *100;
-        }
-        
+         
       })
+      this.bigSizeTotal = _items[0];
+      this.smallSizeTotal = _items[1];
+
+      this.bigPercentage = (this.bigSizeTotal * 100) / this.totalYield;
+      this.smallPercentage = (this.smallSizeTotal * 100) / this.totalYield;
+      
     });
   }
 
