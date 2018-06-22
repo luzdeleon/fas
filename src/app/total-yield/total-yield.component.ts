@@ -86,6 +86,7 @@ series: this.arrayForGraph
 
   getYieldInfo(){
     this.items.subscribe((_items)=>{
+      this.totalYield = 0;
       _items.forEach(item => {
         this.totalYield = this.totalYield + item;
         //this.totalOrchidArea = this.totalYield / 3;
