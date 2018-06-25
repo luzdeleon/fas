@@ -21,13 +21,11 @@ export class OrangeComponent implements OnInit {
 
   buildIndexString: string = "Date";
 
-  date: string = "";
+  harvestDate: string = "";
   weather: string = "";
   minTemp: number = 0;
   maxTemp: number = 0;
-  today =  Date.now();
-  dateDiff: number = 0;
-  expectedDate = Date;
+  today =  new Date();
 
 
 
@@ -40,16 +38,9 @@ export class OrangeComponent implements OnInit {
       _items.forEach((item, index, array) => {
         if(index == array.length -1) {
           this.weather = item[1];
-          this.date = item[0];
-          //this.date = Date.parse(this.date);
-          //this.dateDiff = this.today - Date.parse(this.date);
-
-          //this.expectedDate = Date.parse(this.date);
-          //console.log(this.today)
-          //console.log(Date.parse(this.date))
+          this.harvestDate = item[0];
         }
       })
-      
     })
   }
 
