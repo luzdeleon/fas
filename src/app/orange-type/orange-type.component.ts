@@ -75,7 +75,7 @@ export class OrangeTypeComponent implements OnInit {
     this.totalY.subscribe((_items)=> {
       
       this.totalYield = 0;
-      _items.forEach((item, index, array) => {
+      _items.forEach((item) => {
         this.totalYield = this.totalYield + item;
          
       })

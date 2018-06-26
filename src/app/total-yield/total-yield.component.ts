@@ -89,7 +89,6 @@ series: this.arrayForGraph
       this.totalYield = 0;
       _items.forEach(item => {
         this.totalYield = this.totalYield + item;
-        //this.totalOrchidArea = this.totalYield / 3;
         this.yieldPerH = this.totalYield / 18;
         
       })
@@ -137,10 +136,10 @@ series: this.arrayForGraph
         endOnTick: true
       },
       legend: {
-        //layout: 'vertical',
-        //align: 'right',
-        //verticalAlign: 'middle',
-        //itemMarginTop: 45
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        itemMarginTop: 45
     },
       yAxis: {
         className: 'highcharts-yAxis-custom',
